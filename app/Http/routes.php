@@ -18,3 +18,9 @@ Route::get('/', function () {
 });
 
 Route::get('/home', 'HomeController@index');
+
+Route::resource('company', 'CompanyController');
+
+Route::resource('contacts', 'ContactController');
+
+Route::resource('task', 'TaskController');
