@@ -5,9 +5,15 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use Illuminate\Support\Facades\DB;
 
 class CompanyController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +21,9 @@ class CompanyController extends Controller
      */
     public function index()
     {
-        //
+        $companies = DB::table('companies')->get();
+
+        return view('company.home', compact('companies'));
     }
 
     /**
@@ -47,7 +55,9 @@ class CompanyController extends Controller
      */
     public function show($id)
     {
-        //
+        $company = Company::find($id);
+
+        return view('company.show', compact('company'));
     }
 
     /**

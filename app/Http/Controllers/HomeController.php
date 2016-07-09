@@ -27,6 +27,6 @@ class HomeController extends Controller
     {
         $employeeTasks = Auth::user()->tasks;
 
-        return view('home', compact('employeeTasks'));
+        return view('home.home', compact('employeeTasks'));
     }
 }
