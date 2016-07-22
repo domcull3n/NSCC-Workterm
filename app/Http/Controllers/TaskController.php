@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Company;
+use App\Task;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\View;
 
 class TaskController extends Controller
 {
@@ -20,7 +24,9 @@ class TaskController extends Controller
      */
     public function index()
     {
-        //
+        $companies = Company::with('tasks')->get();
+
+        return view('task.home', compact('companies'));
     }
 
     /**
@@ -52,7 +58,9 @@ class TaskController extends Controller
      */
     public function show($id)
     {
-        //
+        $task = Task::find($id);
+
+        return view('task.show', compact('task'));
     }
 
     /**

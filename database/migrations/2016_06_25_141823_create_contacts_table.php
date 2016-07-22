@@ -19,8 +19,8 @@ class CreateContactsTable extends Migration
             $table->string('phone_number');
             $table->string('job_title');
             $table->longText('notes');
-            $table->timestamps();
             $table->integer('company_id')->unsigned();
+            $table->timestamps();
 
             $table->foreign('company_id')->references('id')->on('companies');
         });

@@ -19,6 +19,7 @@ class CreateTasksTable extends Migration
             $table->enum('status', ['completed', 'in-progress', 'suspended'])->nullable();
             $table->longText('notes')->nullable();
             $table->integer('company_id')->unsigned();
+            $table->timestamps();
 
             $table->foreign('company_id')->references('company_id')->on('companies');
         });
@@ -39,7 +40,7 @@ class CreateTasksTable extends Migration
      */
     public function down()
     {
-        Schema::drop('users_tasks');
+        Schema::drop('task_user');
         Schema::drop('tasks');
     }
 }
