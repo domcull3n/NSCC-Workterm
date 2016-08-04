@@ -8,6 +8,10 @@ class Company extends Model
 {
     protected $table = 'companies';
 
+    protected $guarded = [
+        'id'
+    ];
+
     /*
      * Get all tasks to do with the company
      */

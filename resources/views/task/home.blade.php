@@ -16,7 +16,7 @@
 
                         <div class="panel-body">
                             @foreach($company->tasks as $task)
-                                <div class="h2">
+                                <div class="h4">
                                     <a href="{{ url('task', $task->id) }}">
                                         {{ $task->name }}
                                     </a>
