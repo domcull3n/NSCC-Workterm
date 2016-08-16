@@ -24,7 +24,7 @@ class CompanyRequest extends Request
     public function rules()
     {
         return [
-            'name' => 'required'
+            'company_name' => 'required'
         ];
     }
 }

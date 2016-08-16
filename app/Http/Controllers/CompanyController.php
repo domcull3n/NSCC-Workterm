@@ -46,7 +46,9 @@ class CompanyController extends Controller
      */
     public function store(CompanyRequest $request)
     {
-        $company = Company::create($request->all());
+        $formInput = $request->all();
+
+        Company::create($formInput);
 
         return redirect('company');
     }
